@@ -6,6 +6,8 @@ namespace Gradebook
     {
         static void Main(string[] args)
         {
+            var numbers = new[] {3.4};
+
             Console.WriteLine($"Hello, {args[0]}!");
         }
     }
