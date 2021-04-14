@@ -1,2 +1,4 @@
-bin/
-obj/
+src/Gradebook/bin/
+src/Gradebook/obj/
+test/Gradebook.test/obj/
+test/Gradebook.test/bin/
