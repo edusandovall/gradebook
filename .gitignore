@@ -1,4 +1,4 @@
-src/Gradebook/bin/
+-msrc/Gradebook/bin/
 src/Gradebook/obj/
 test/Gradebook.test/obj/
 test/Gradebook.test/bin/
