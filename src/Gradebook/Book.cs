@@ -6,13 +6,13 @@ namespace Gradebook
     public class Book 
     {
         private List<double> grades;
-        private string name; 
+        public string Name; 
 
         //Constructor
         public Book(string name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         //Shows average, max and low grade of a set of data
