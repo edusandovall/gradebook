@@ -26,14 +26,14 @@ namespace Gradebook.test
           Assert.Equal("New Name", book1.Name);
         }
 
-        [Fact]
+       /*  [Fact]
         public void CSharpIsPassByValue()
         {
           var book1 = GetBook("Book 1");
           GetBookSetName(book1, "New Name");
 
           Assert.Equal("New Name", book1.Name);
-        }
+        } */
 
         [Fact]
         public void CSharpCanPassByRef()
@@ -42,6 +42,25 @@ namespace Gradebook.test
           GetBookSetName(ref book1, "New Name");
 
           Assert.Equal("New Name", book1.Name);
+        }
+
+        [Fact]
+        public void ValueTypeAlsoPassedByValue()
+        {
+            var x = GetInt();
+            SetInt(ref x);
+
+            Assert.Equal(42, x);
+        }
+
+        private void SetInt(ref int z)
+        {
+            z = 42;
+        }
+
+        private int GetInt()
+        {
+            return 3;
         }
 
         public void GetBookSetName(ref Book book, string name)
@@ -59,6 +78,7 @@ namespace Gradebook.test
             book.Name = name;
         }
 
+        [Fact]
         public void TwoVarsCanReferenceSameObject()
         {
            var book1 = GetBook("Book 1");
