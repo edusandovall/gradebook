@@ -26,13 +26,27 @@ namespace Gradebook.test
           Assert.Equal("New Name", book1.Name);
         }
 
-             [Fact]
+        [Fact]
         public void CSharpIsPassByValue()
         {
           var book1 = GetBook("Book 1");
           GetBookSetName(book1, "New Name");
 
           Assert.Equal("New Name", book1.Name);
+        }
+
+        [Fact]
+        public void CSharpCanPassByRef()
+        {
+          var book1 = GetBook("Book 1");
+          GetBookSetName(ref book1, "New Name");
+
+          Assert.Equal("New Name", book1.Name);
+        }
+
+        public void GetBookSetName(ref Book book, string name)
+        {
+            book = new Book(name);
         }
 
          public void GetBookSetName(Book book, string name)
